@@ -6,9 +6,9 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.handler
-      Runtime: python3.9
-      CodeUri: .
+      Runtime: python3.13
+      CodeUri: s3://mycodebucet/upload_to_search.zip
       Description: ''
       MemorySize: 512
       Timeout: 900
-      Role: 'arn:aws:iam::844028273225:role/lambda_s3'
+      Role: 'arn:aws:iam::020510964414:role/service-role/PDFtoTXT-role-rkh5aptl'
