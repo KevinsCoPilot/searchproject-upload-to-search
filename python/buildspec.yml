@@ -5,9 +5,10 @@ phases:
       python: 3.10
   build:
     commands:
-      - aws cloudformation package --template-file upload-to-search.yaml --s3-bucket searchproject-codebuild --output-template-file upload.yaml
+      - aws cloudformation package --template-file python/upload-to-search.yaml --s3-bucket searchproject-codebuild --output-template-file python/upload.yaml
 
 artifacts:
   type: zip
   files:
     - upload-to-search.yaml
+    - python/upload.yaml
