@@ -2,13 +2,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.10
+      python: 3.12
   build:
     commands:
-      - aws cloudformation package --template-file python/upload-to-search.yaml --s3-bucket searchproject-codebuild --output-template-file python/upload.yaml
+      - aws cloudformation package --template-file python/upload-to-search.yaml --s3-bucket searchproject-codebuild --output-template-file python/upload-to-search-output.yaml
 
 artifacts:
   type: zip
   files:
-    - upload-to-search.yaml
-    - python/upload.yaml
+    - python/upload-to-search-output.yaml
+    - python/lambda_function.py
+
